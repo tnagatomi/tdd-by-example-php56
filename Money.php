@@ -12,4 +12,13 @@ class Money
     {
         return ($this->amount == $money->amount) && (get_class($this) === get_class($money));
     }
+
+    /**
+     * @param int $amount
+     * @return Dollar
+     */
+    static function dollar($amount)
+    {
+        return new Dollar($amount);
+    }
 }
