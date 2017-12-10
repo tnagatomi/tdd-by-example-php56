@@ -21,7 +21,7 @@ abstract class Money
 
     /**
      * @param int $amount
-     * @return Dollar
+     * @return Money
      */
     static function dollar($amount)
     {
