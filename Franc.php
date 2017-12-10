@@ -1,9 +1,9 @@
 <?php
 
-class Franc
-{
-    private $amount;
+require_once ('Money.php');
 
+class Franc extends Money
+{
     /**
      * Franc constructor.
      * @param int $amount
@@ -20,14 +20,5 @@ class Franc
     public function times($multiplier)
     {
         return new Franc($this->amount * $multiplier);
-    }
-
-    /**
-     * @param Franc $franc
-     * @return bool
-     */
-    public function equals(Franc $franc)
-    {
-        return $this->amount == $franc->amount;
     }
 }
