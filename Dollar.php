@@ -4,8 +4,6 @@ require_once('Money.php');
 
 class Dollar extends Money
 {
-    private $amount;
-
     /**
      * Dollar constructor.
      * @param int $amount

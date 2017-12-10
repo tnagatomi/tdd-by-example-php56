@@ -2,5 +2,5 @@
 
 class Money
 {
-
+    protected $amount;
 }
