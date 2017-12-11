@@ -10,6 +10,8 @@ abstract class Money
      */
     abstract function times($multiplier);
 
+    abstract function currency();
+
     /**
      * @param Money $money
      * @return bool

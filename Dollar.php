@@ -14,6 +14,14 @@ class Dollar extends Money
     }
 
     /**
+     * @return string
+     */
+    public function currency()
+    {
+        return 'USD';
+    }
+
+    /**
      * @param int $multiplier
      * @return Money
      */

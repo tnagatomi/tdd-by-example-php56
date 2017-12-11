@@ -14,6 +14,14 @@ class Franc extends Money
     }
 
     /**
+     * @return string
+     */
+    public function currency()
+    {
+        return 'CHF';
+    }
+
+    /**
      * @param int $multiplier
      * @return Money
      */
