@@ -43,6 +43,6 @@ abstract class Money
      */
     static function franc($amount)
     {
-        return new Franc($amount);
+        return new Franc($amount, null);
     }
 }
