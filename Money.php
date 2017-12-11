@@ -5,6 +5,12 @@ abstract class Money
     protected $amount;
     protected $currency;
 
+    public function __construct($amount, $currency)
+    {
+        $this->amount = $amount;
+        $this->currency = $currency;
+    }
+
     /**
      * @param int $multiplier
      * @return Money
