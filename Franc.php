@@ -4,8 +4,6 @@ require_once ('Money.php');
 
 class Franc extends Money
 {
-    private $currency;
-
     /**
      * Franc constructor.
      * @param int $amount
@@ -14,14 +12,6 @@ class Franc extends Money
     {
         $this->amount = $amount;
         $this->currency = 'CHF';
-    }
-
-    /**
-     * @return string
-     */
-    public function currency()
-    {
-        return $this->currency;
     }
 
     /**

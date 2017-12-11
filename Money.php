@@ -3,6 +3,7 @@
 abstract class Money
 {
     protected $amount;
+    protected $currency;
 
     /**
      * @param int $multiplier
@@ -10,7 +11,13 @@ abstract class Money
      */
     abstract function times($multiplier);
 
-    abstract function currency();
+    /**
+     * @return string
+     */
+    public function currency()
+    {
+        return $this->currency;
+    }
 
     /**
      * @param Money $money
