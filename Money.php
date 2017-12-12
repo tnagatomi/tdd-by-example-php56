@@ -1,6 +1,6 @@
 <?php
 
-abstract class Money
+class Money
 {
     protected $amount;
     protected $currency;
@@ -15,7 +15,10 @@ abstract class Money
      * @param int $multiplier
      * @return Money
      */
-    abstract function times($multiplier);
+    public function times($multiplier)
+    {
+        return null;
+    }
 
     /**
      * @return string
