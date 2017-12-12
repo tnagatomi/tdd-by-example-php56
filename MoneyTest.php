@@ -1,7 +1,5 @@
 <?php
 
-require_once('Franc.php');
-
 class MoneyTest extends PHPUnit_Framework_TestCase
 {
     /*
