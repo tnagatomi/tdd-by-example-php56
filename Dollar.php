@@ -13,13 +13,4 @@ class Dollar extends Money
     {
         parent::__construct($amount, $currency);
     }
-
-    /**
-     * @param int $multiplier
-     * @return Money
-     */
-    public function times($multiplier)
-    {
-        return new Dollar($this->amount * $multiplier, $this->currency);
-    }
 }

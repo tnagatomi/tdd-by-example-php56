@@ -17,7 +17,7 @@ class Money
      */
     public function times($multiplier)
     {
-        return null;
+        return new Money($this->amount * $multiplier, $this->currency);
     }
 
     /**
@@ -43,7 +43,7 @@ class Money
      */
     static function dollar($amount)
     {
-        return new Dollar($amount, 'USD');
+        return new Money($amount, 'USD');
     }
 
     /**
@@ -52,6 +52,6 @@ class Money
      */
     static function franc($amount)
     {
-        return new Franc($amount, 'CHF');
+        return new Money($amount, 'CHF');
     }
 }
