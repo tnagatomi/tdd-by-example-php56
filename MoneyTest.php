@@ -1,6 +1,8 @@
 <?php
 
+require_once 'Expression.php';
 require_once 'Money.php';
+require_once 'Bank.php';
 
 class MoneyTest extends PHPUnit_Framework_TestCase
 {
