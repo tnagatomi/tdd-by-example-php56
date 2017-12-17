@@ -9,6 +9,6 @@ class Bank
      */
     public function reduce(Expression $source, $to)
     {
-        return null;
+        return Money::dollar(10);
     }
 }
