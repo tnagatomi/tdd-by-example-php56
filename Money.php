@@ -30,6 +30,17 @@ class Money implements Expression
     }
 
     /**
+     * @param Bank $bank
+     * @param string $to
+     * @return Money
+     */
+    public function reduce(Bank $bank, $to)
+    {
+        $rate = $bank->rate($this->currency, $to);
+        return new Money($this->amount / $rate, $to);
+    }
+
+    /**
      * @return string
      */
     public function currency()
@@ -62,5 +73,13 @@ class Money implements Expression
     static function franc($amount)
     {
         return new Money($amount, 'CHF');
+    }
+
+    /**
+     * @return int
+     */
+    public function amount()
+    {
+        return $this->amount;
     }
 }

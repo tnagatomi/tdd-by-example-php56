@@ -4,6 +4,7 @@ require_once 'Expression.php';
 require_once 'Money.php';
 require_once 'Bank.php';
 require_once 'Sum.php';
+require_once 'Pair.php';
 
 class MoneyTest extends PHPUnit_Framework_TestCase
 {
@@ -68,5 +69,31 @@ class MoneyTest extends PHPUnit_Framework_TestCase
         $bank = new Bank();
         $result = $bank->reduce($sum, 'USD');
         $this->assertEquals(Money::dollar(7), $result);
+    }
+
+    /*
+     * @test
+     */
+    public function testReduceMoney()
+    {
+        $bank = new Bank();
+        $result = $bank->reduce(Money::dollar(1), 'USD');
+        $this->assertEquals(Money::dollar(1), $result);
+    }
+
+    /*
+     * @test
+     */
+    public function testReduceMoneyDifferentCurrency()
+    {
+        $bank = new Bank();
+        $bank->addRate('CHF', 'USD', 2);
+        $result = $bank->reduce(Money::franc(2), 'USD');
+        $this->assertEquals(Money::dollar(1), $result);
+    }
+
+    public function testIdentityRate()
+    {
+        $this->assertEquals(1, (new Bank())->rate('USD', 'USD'));
     }
 }
