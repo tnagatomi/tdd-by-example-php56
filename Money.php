@@ -21,10 +21,10 @@ class Money implements Expression
     }
 
     /**
-     * @param Money $addend
+     * @param Expression $addend
      * @return Expression
      */
-    public function plus(Money $addend)
+    public function plus(Expression $addend)
     {
         return new Sum($this, $addend);
     }
