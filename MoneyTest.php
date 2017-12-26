@@ -46,4 +46,15 @@ class MoneyTest extends PHPUnit_Framework_TestCase
         $reduced = $bank->reduce($sum, 'USD');
         $this->assertEquals(Money::dollar(10), $reduced);
     }
+
+    /*
+     * @test
+     */
+    public function testPlusReturnsSum()
+    {
+        $five = Money::dollar(5);
+        $sum = $five->plus($five);
+        $this->assertEquals($five, $sum->augend);
+        $this->assertEquals($five, $sum->addend);
+    }
 }
